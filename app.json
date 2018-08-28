@@ -1,0 +1,10 @@
+{
+  "name"   : "pay-client",
+  "script" : "scripts/start.js",
+  "max_memory_restart" : "200M",
+  "exec_mode": "cluster",
+  "env":{
+    "PORT": 3000
+  },
+  "watch": false
+}
