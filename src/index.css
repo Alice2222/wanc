@@ -1,0 +1,26 @@
+body {
+  height: 100%;
+  margin: 0;
+  font-family: apple-system, "SF Pro SC","SF Pro Text","SF Pro Icons","Helvetica Neue","Helvetica", "Roboto","Arial", sans-serif;
+  font-size: 14px;
+  font-weight: 200;
+  line-height: 1.5;
+  color: #2c303d;
+}
+.footer {
+  background: black;
+  color: white;
+  text-align: center;
+  font-size: 14px;
+  padding: 20px;
+}
+
+.statcounter {
+  position: absolute;
+  left: -99999px;
+  top: -99999px;
+}
+.statcounter img {
+  width: 1px;
+  height: 1px;
+}
