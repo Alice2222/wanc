@@ -6,7 +6,7 @@ import Index from '../pages/index/page';
 const RouterIndex = () => {
   return (
     <Switch>
-      <Route exact={true} path='/' component={Index} />
+      <Route exact={true} path='/wanc' component={Index} />
     </Switch>
   )
 }
