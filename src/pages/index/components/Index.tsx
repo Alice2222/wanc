@@ -4,7 +4,7 @@ import { Form, Row, Col, InputNumber, Button, Input, Table } from 'antd';
 import * as React from 'react';
 import axios from 'axios';
 import './Index.css';
-require('../../../mock/data');
+// require('../../../mock/data');
 
 const FormItem = Form.Item;
 
