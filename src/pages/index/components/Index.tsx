@@ -191,7 +191,7 @@ class Index extends React.Component<IProps, IState> {
           <Col lg={12} xs={24}>
             <h3>温度信息(摄氏度)</h3>
             <Row>
-              <Col lg={4} xs={6}>
+              <Col lg={4} xs={8}>
                 <FormItem label="今天22点">
                   {getFieldDecorator('todayDayTemperatures[0]', {
                     initialValue: 27,
@@ -201,7 +201,7 @@ class Index extends React.Component<IProps, IState> {
                   )}
                 </FormItem>
               </Col>
-              <Col lg={4} xs={6}>
+              <Col lg={4} xs={8}>
                 <FormItem label="今天23点">
                   {getFieldDecorator('todayDayTemperatures[1]', {
                     initialValue: 27,
@@ -245,7 +245,7 @@ class Index extends React.Component<IProps, IState> {
     const { getFieldDecorator } = this.props.form;
 
     for(let i = 0; i < 24; i++) {
-      formItems.push(<Col  lg={4} xs={6} key={i}>
+      formItems.push(<Col  lg={4} xs={8} key={i}>
         <FormItem label={`明天${i}点`}>
           {getFieldDecorator(`tomorrowDayTemperatures[${i}]`, {
             initialValue: 27,
