@@ -4,7 +4,7 @@ import { Form, Row, Col, InputNumber, Button, Input, Table } from 'antd';
 import * as React from 'react';
 import axios from 'axios';
 import './Index.css';
-require('../../../mock/data');
+// require('../../../mock/data');
 
 const FormItem = Form.Item;
 
@@ -278,8 +278,8 @@ class Index extends React.Component<IProps, IState> {
         const instance = axios.create({
           timeout: 7200000
         });
-        instance.post('http://test/request')
-        // instance.post('http://42.159.86.241:5000/tune_param', requestData)
+        // instance.post('http://test/request')
+        instance.post('http://42.159.86.241:5000/tune_param', requestData)
           .then((response:any) => {
             const result = response.data;
             const initTotalElect = result['initElectPerHour'].reduce((prev:number, curr:number) => (prev + curr)).toFixed(2);
