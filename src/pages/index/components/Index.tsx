@@ -4,7 +4,7 @@ import { Form, Row, Col, InputNumber, Button, Input, Table } from 'antd';
 import * as React from 'react';
 import axios from 'axios';
 import './Index.css';
-// require('../../../mock/data');
+require('../../../mock/data');
 
 const FormItem = Form.Item;
 
@@ -66,7 +66,7 @@ class Index extends React.Component<IProps, IState> {
     return(<div className="content-box">
       <Form onSubmit={this.submitForm}>
         <Row>
-          <Col span={12}>
+          <Col lg={12} xs={24}>
             <h3>当前冷却塔参数</h3>
             <FormItem label="塔出水最小温度" {...formItemLayout}>
               {getFieldDecorator('coolingTowerOutWaterTmptMin', {
@@ -108,7 +108,7 @@ class Index extends React.Component<IProps, IState> {
               )}
             </FormItem>
           </Col>
-          <Col span={12}>
+          <Col lg={12} xs={24}>
             <h3>当前冷却泵参数</h3>
             <FormItem label="冷却水温差设定值" {...formItemLayout}>
               {getFieldDecorator('coolingWaterTmptRange', {
@@ -144,7 +144,7 @@ class Index extends React.Component<IProps, IState> {
           </Col>
         </Row>
         <Row>
-          <Col span={12}>
+          <Col lg={12} xs={24}>
             <h3>当前冷冻泵参数</h3>
             <FormItem label="冷冻水温差设定值" {...formItemLayout}>
               {getFieldDecorator('chilledWaterTmptRange', {
@@ -188,10 +188,10 @@ class Index extends React.Component<IProps, IState> {
               )}
             </FormItem>
           </Col>
-          <Col span={12}>
+          <Col lg={12} xs={24}>
             <h3>温度信息(摄氏度)</h3>
             <Row>
-              <Col span={4}>
+              <Col lg={4} xs={6}>
                 <FormItem label="今天22点">
                   {getFieldDecorator('todayDayTemperatures[0]', {
                     initialValue: 27,
@@ -201,7 +201,7 @@ class Index extends React.Component<IProps, IState> {
                   )}
                 </FormItem>
               </Col>
-              <Col span={4}>
+              <Col lg={4} xs={6}>
                 <FormItem label="今天23点">
                   {getFieldDecorator('todayDayTemperatures[1]', {
                     initialValue: 27,
@@ -232,7 +232,7 @@ class Index extends React.Component<IProps, IState> {
           <Table
             columns={columns}
             dataSource={data.tableData}
-            scroll={{ x: 1803 }}
+            scroll={{ x: 2813 }}
             bordered={true}
             size="middle"
           />
@@ -245,7 +245,7 @@ class Index extends React.Component<IProps, IState> {
     const { getFieldDecorator } = this.props.form;
 
     for(let i = 0; i < 24; i++) {
-      formItems.push(<Col span={4} key={i}>
+      formItems.push(<Col  lg={4} xs={6} key={i}>
         <FormItem label={`明天${i}点`}>
           {getFieldDecorator(`tomorrowDayTemperatures[${i}]`, {
             initialValue: 27,
@@ -278,8 +278,8 @@ class Index extends React.Component<IProps, IState> {
         const instance = axios.create({
           timeout: 7200000
         });
-        // instance.post('http://test/request')
-        instance.post('http://42.159.86.241:5000/tune_param', requestData)
+        instance.post('http://test/request')
+        // instance.post('http://42.159.86.241:5000/tune_param', requestData)
           .then((response:any) => {
             const result = response.data;
             const initTotalElect = result['initElectPerHour'].reduce((prev:number, curr:number) => (prev + curr)).toFixed(2);
